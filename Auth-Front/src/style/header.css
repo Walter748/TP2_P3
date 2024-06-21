@@ -1,0 +1,11 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background-color: darkblue;
+    padding: 0.01rem;
+    width: 100%;
+    color: white;
+    z-index: 1000;
+}

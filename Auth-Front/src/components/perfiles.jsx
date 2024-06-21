@@ -1,6 +1,6 @@
 export function Perfiles () {
     return (
-        <p>Foto</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad ratione facere molestiae tempore mollitia corporis qui aliquam iusto cum quis modi pariatur aperiam quas facilis minima, quisquam debitis adipisci sapiente!</p>
     )
 }
 {/* <article>

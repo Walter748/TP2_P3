@@ -1,6 +1,10 @@
+import '../style/header.css'
+
 export function Header () {
     return (
-        <h1>header</h1>
+        <header>
+            <h1>Portafolio</h1>
+        </header>
     )
 }
 {/* <header id="titulo">

@@ -1,0 +1,27 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    background-color: darkblue;
+    padding: 0.01rem;
+    width: 100%;
+    color: white;
+    align-items: center;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    order: 1;
+}
+
+footer a:hover {
+    color: yellowgreen;
+}
+
+footer p {
+    order: -1;
+}
