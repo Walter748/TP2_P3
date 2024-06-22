@@ -4,7 +4,7 @@ export function Footer () {
     return (
         <footer>
             <section>
-                <a href="#titulo">Ir al comienzo</a>
+                <a href="#">Contactanos</a>
             </section>
             <p>ZOCANETA</p>
         </footer>
