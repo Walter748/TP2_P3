@@ -1,0 +1,16 @@
+div {
+    display: flex;
+    padding: 10px;
+}
+
+h2 {
+    font-weight: bold; /*Pone letras en negrita*/
+    text-align: center;
+    font-size: 2em; /* Cambiar el tamaño a 24 píxeles */
+}
+
+.contacto{
+    padding: 10px;
+    margin-right: 5px;
+    flex: 1;
+}

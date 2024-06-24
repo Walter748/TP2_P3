@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
+import '../style/contactos.css'
 
 const Contactos = ({ contactos }) => {
     return (
         <div>
             <h2>Contactos</h2>
-            <ul>
+            <ul className='contacto'>
                 {contactos.map((contacto, index) => (
                     <li key={index}>{contacto.nombre} - {contacto.email}</li>
                 ))}
