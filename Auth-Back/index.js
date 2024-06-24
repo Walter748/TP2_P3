@@ -1,10 +1,18 @@
-import express from 'express';
-import cors from 'cors';
-import mysql from 'mysql2';
+const expres = require('express');
+const cors = require('cors');
+const dotenv = require('dotenv');
+const conexion = require('./database/db');
+const app = expres()
 
-const app = express();
+app.use(expres.urlencoded({extends:false}))
+app.use(expres.json())
 
+app.use(cors())
 
+dotenv.config({path: './.env'})
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Servidor corriendo en puerto: ${PORT}`));
+app.use('/', require('./routes/auth'))
+
+app.listen(5000, (req, res)=>{
+    console.log('Servidor corriendo en el puerto 5000')
+})
