@@ -5,7 +5,7 @@ import Servicios from '../components/servicios';
 
 const PortfolioView = () => {
     const contactos = [
-        { nombre: 'Juan', email: 'juan@email.com' },
+        { nombre: 'Walter', email: 'walter@email.com' },
     ];
 
     const proyectos = [
