@@ -1,69 +1,26 @@
-import React, { useState } from 'react';
-import authService from '../services/authService';
-import '../style/LoginStyle.css';
+import React from 'react'
 
-const Register = ({ setIsLoggedIn }) => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleRegister = () => {
-    // Validar que los campos no estén vacíos antes de hacer la solicitud de registro
-    if (name.trim() === '' || email.trim() === '' || password.trim() === '') {
-      console.error('Todos los campos son requeridos.');
-      return;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/i;
-    if (!emailPattern.test(email)) {
-      console.error('El formato del correo electrónico es inválido.');
-      return;
-    }
-
-    // Validar longitud mínima de la contraseña
-    if (password.length < 8) {
-      console.error('La contraseña debe tener al menos 8 caracteres.');
-      return;
-    }
-
-    authService.register(name, email, password)
-      .then(response => {
-        console.log('User registered:', response.data);
-        setIsLoggedIn(true); // Marcar al usuario como autenticado después del registro exitoso
-      })
-      .catch(error => {
-        console.error('There was an error registering the user!', error);
-      });
-  };
-
+function Register() {
   return (
-    <div className="register-container">
-      <h2>Register</h2>
-      <input
-        type="text"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder="Name"
-        required
-      />
-      <input
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="Email"
-        required
-        pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$"
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      />
-      <button onClick={handleRegister}>Register</button>
-    </div>
-  );
-};
+    <div className='r-container'>
+     <span className='title'>Plus Chat</span> 
+     <span className='subtitle'>Registro</span> 
+     <form>
+      <input type='text' placeholder='Digite o none'/>
+      <input type='email' placeholder='Digite o e-mail'/>
+      <input type='password' placeholder='Digite o '/>
+      <input src='addCV' id='file' style={{display:'none'}} />
+      <label htmlFor='file'>
+      <img srr={addCV}alt='Cv'/> 
+        <span>adiciona CV</span>
 
-export default Register;
+      </label>
+      <button>Register</button>
+     </form>  
+     <p>Tenes una cuenta? Login</p>
+
+    </div>
+  )
+}
+
+export default Register
