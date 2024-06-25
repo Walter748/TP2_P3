@@ -17,3 +17,14 @@ article {
     border-color: black;
     border: 1px solid rgb(191, 244, 253);
 }
+
+.boton {
+    padding: 0.5rem;
+    border: none;
+    background-color: #053348;
+    font-weight: 400;
+    color: #fafafa;
+    font-size: 1rem;
+    border-radius: 0.1rem;
+    cursor: pointer;
+}
