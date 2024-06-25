@@ -3,7 +3,7 @@ import '../styles/servicios.css'
 
 const Servicios = ({ servicios }) => {
     return (
-        <div>
+        <div className='div-proyect'>
             <h2>Servicios Ofrecidos</h2>
             <ul className='servicios'>
                 {servicios.map((servicio, index) => (

@@ -3,11 +3,14 @@ import '../styles/contactos.css'
 
 const Contactos = ({ contactos }) => {
     return (
-        <div>
+        <div className='div-proyect'>
             <h2>Contactos</h2>
             <ul className='contacto'>
                 {contactos.map((contacto, index) => (
-                    <li key={index}>{contacto.nombre} - {contacto.email}</li>
+                    <>
+                    <li key={index}>Nombre: {contacto.nombre}</li>
+                    <li key={index}>Email:  {contacto.email}</li>
+                    </>
                 ))}
             </ul>
         </div>

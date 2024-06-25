@@ -3,7 +3,7 @@ import '../styles/proyectos.css'
 
 const Proyectos = ({ proyectos }) => {
     return (
-        <div>
+        <div className='div-proyect'>
             <h2>Proyectos</h2>
             <ul className='proyectos'>
                 {proyectos.map((proyecto, index) => (

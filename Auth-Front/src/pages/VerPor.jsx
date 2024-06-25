@@ -2,10 +2,11 @@ import React from 'react';
 import Contactos from '../components/contactos';
 import Proyectos from '../components/proyectos';
 import Servicios from '../components/servicios';
+import {Link} from 'react-router-dom'
 import './VerPor.css'
 
 
-const PortfolioView = () => {
+const VerPor = () => {
     const contactos = [
         { nombre: 'Walter', email: 'walter@email.com' },
     ];
@@ -22,13 +23,22 @@ const PortfolioView = () => {
     ];
 
     return (
-        <div>
+        <div className="home-container">
+            <Link to='/' className='boton'>Inicio</Link>
             <h1>Portafolio</h1>
-            <Contactos contactos={contactos} />
-            <Proyectos proyectos={proyectos} />
-            <Servicios servicios={servicios} />
+            <section>
+                <Contactos contactos={contactos} />
+            </section>
+            <br />
+            <section>
+                <Proyectos proyectos={proyectos} />
+            </section>
+            <br />
+            <section>
+                <Servicios servicios={servicios} />
+            </section>
         </div>
     );
 }
 
-export default PortfolioView;
+export default VerPor;
