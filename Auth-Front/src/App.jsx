@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Register from './Register';
-import Login from './Login';
-import Header from './Header.jsx'; // Cambiado de Home a Header
-import NavBar from './components/NavBar'; // Asumiendo que este es tu componente NavBar
+import Register from './components/Register.jsx'
+import Login from './components/Login.jsx';
+import header from './components/header.jsx'; 
+import NavBar from './components/NavBar'; 
 
 function App() {
   const [user, setUser] = useState([]);
