@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Cambiado a min-height para asegurar que ocupe al menos toda la altura de la ventana */
     background-color: aquamarine; /* Color de fondo similar al del header */
 }
 
@@ -13,6 +13,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 500px;
     text-align: center;
+    margin-top: 5rem; /* Añade un margen superior para mover el formulario hacia abajo */
 }
 
 .register-form input {

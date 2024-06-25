@@ -4,7 +4,7 @@ import Proyectos from '../components/proyectos';
 import Servicios from '../components/servicios';
 
 
-const PortfolioView = () => {
+const VerPor = () => {
     const contactos = [
         { nombre: 'Walter', email: 'walter@email.com' },
     ];
@@ -30,4 +30,4 @@ const PortfolioView = () => {
     );
 }
 
-export default PortfolioView;
+export default VerPor;

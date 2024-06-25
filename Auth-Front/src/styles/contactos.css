@@ -1,16 +1,20 @@
+/* Estilos para el contenedor principal */
 div {
     display: flex;
+    flex-direction: column; /* Establecer dirección de columnas */
     padding: 10px;
 }
 
+/* Estilos para el título h2 */
 h2 {
-    font-weight: bold; /*Pone letras en negrita*/
+    font-weight: bold;
     text-align: center;
-    font-size: 2em; /* Cambiar el tamaño a 24 píxeles */
+    font-size: 2em;
 }
 
-.contacto{
+/* Estilos para los elementos .contacto */
+.contacto {
     padding: 10px;
     margin-right: 5px;
-    flex: 1;
+    flex: 1; /* Ocupa todo el espacio disponible verticalmente */
 }
