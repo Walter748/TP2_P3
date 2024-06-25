@@ -3,6 +3,7 @@ import Contactos from '../components/contactos';
 import Proyectos from '../components/proyectos';
 import Servicios from '../components/servicios';
 
+
 const PortfolioView = () => {
     const contactos = [
         { nombre: 'Walter', email: 'walter@email.com' },
