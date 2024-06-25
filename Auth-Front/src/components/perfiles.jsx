@@ -1,4 +1,4 @@
-import '../style/perfiles.css'
+import '../styles/perfiles.css'
 
 export function Perfiles() {
     return (
