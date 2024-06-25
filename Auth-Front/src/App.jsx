@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Register from './components/Register.jsx'
 import Login from './components/Login.jsx';
-import header from './components/header.jsx'; 
+import { Header } from './components/header.jsx'; 
 import NavBar from './components/NavBar'; 
 
 function App() {
