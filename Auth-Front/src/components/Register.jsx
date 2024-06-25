@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './register.css'
 
 const Register = () => {
@@ -47,6 +48,7 @@ const Register = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button type="submit">Registrar</button>
+      <p className="loginr-text">¿Ya tenes una cuenta? <Link to='/login'>Presiona aquí</Link></p>
     </form>
   </>);
 };

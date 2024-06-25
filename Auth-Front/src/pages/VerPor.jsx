@@ -2,6 +2,7 @@ import React from 'react';
 import Contactos from '../components/contactos';
 import Proyectos from '../components/proyectos';
 import Servicios from '../components/servicios';
+import './VerPor.css'
 
 
 const PortfolioView = () => {
