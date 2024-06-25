@@ -4,6 +4,7 @@ const conexion = require('../database/db');
 exports.register = async(req, res) => {
     try{
         const data = req.body
+        console.log(data)
         let passHash = await bcript.hash(data.password, 8)
         conexion.query('INSERT INTO usuarios SET ?', {gmail: data.gmail, usuario:data.usuario, password: passHash}, (error, results)=>{
             if (error) {
@@ -21,6 +22,7 @@ exports.register = async(req, res) => {
 exports.login = async(req, res) => {
     try{
         const data = req.body
+        console.log(data)
         let passHash = await bcript.hash(data.password, 8)
         if (data.gmail && data.password) {
             conexion.query('select * from usuarios where gmail = ?', [data.gmail], async (error , resultado ) =>{
@@ -28,7 +30,7 @@ exports.login = async(req, res) => {
                     console.error('Error en la consulta a la base de datos:', error);
                     return res.status(500).send('Error interno del servidor');
                 }
-                if (resultado.length == 0 || !( await bcryptjs.compare(data.password, resultado[0].password))) {
+                if (resultado.length == 0 || !( await bcript.compare(data.password, resultado[0].password))) {
                 console.log('usurio no encontrado ')
                 } else {
                     console.log('usuario encontrado')

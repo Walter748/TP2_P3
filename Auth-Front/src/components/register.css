@@ -1,6 +1,4 @@
-/* Estilos para el componente Login */
-
-.login-container {
+.register-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,7 +6,7 @@
     background-color: aquamarine; /* Color de fondo similar al del header */
 }
 
-.login-form {
+.register-form {
     background-color: #fafafa; /* Fondo del formulario similar al del header */
     padding: 2rem;
     border-radius: 2rem;
@@ -17,7 +15,7 @@
     text-align: center;
 }
 
-.login-form input {
+.register-form input {
     width: 100%;
     padding: 0.8rem;
     margin-bottom: 1rem;
@@ -29,10 +27,10 @@
     font-size: 1rem;
 }
 
-.login-form button {
+.register-form button {
     width: 100%;
     padding: 1rem;
-    background-color: darkblue; /* Color de fondo del botón similar al del header */
+    background-color: #28a745; /* Color de fondo del botón similar al del header */
     color: white; /* Texto del botón similar al del header */
     border: none;
     border-radius: 0.8rem;
@@ -40,6 +38,6 @@
     transition: background-color 0.3s ease;
 }
 
-.login-form button:hover {
-    background-color: #074b6a; /* Color de fondo hover del botón similar al del header */
+.register-form button:hover {
+    background-color: #218838; /* Color de fondo hover del botón similar al del header */
 }

@@ -1,81 +1,54 @@
-import React from 'react'
-import '../styles/register.css';
-import addCV from '../assets/img.png'
-import { useState } from 'react';
+import React, { useState } from 'react';
+import './register.css'
 
-function Register({ setUser, setShowLogin }) {
-  const [nombre, setNombre] = useState('');
-  const [email, setEmail] = useState('');
+const Register = () => {
+  const [gmail, setGmail] = useState('');
   const [password, setPassword] = useState('');
-  const [cv, setCv] = useState(null);
-  const [error, setError] = useState(false);
-
-  const handleNameChange = (e) => setNombre(e.target.value);
-  const handleEmailChange = (e) => setEmail(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
-  const handleCvChange = (e) => setCv(e.target.files[0]);
-
-  const handleSubmit = (e) => {
+  const [usuario, setUsuario] = useState('');
+  
+  const handleRegister = async (e) => {
     e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/register', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ gmail, usuario, password }), // Corregido: enviar gmail, nombreUsuario y password al servidor
+      });
+      const data = await response.json();
+      alert(data.message); // Mostrar mensaje de respuesta del servidor
 
-    if (nombre === '' || email === '' || password === '') {
-      setError(true);
-      return;
+    } catch (error) {
+      alert('Error registrando usuario: ' + error.message);
     }
-
-    const newUser = [nombre, email, password, cv];
-    console.log('Nuevo Usuario:', newUser);
-
-    setUser(newUser);
-
-    setNombre('');
-    setEmail('');
-    setPassword('');
-    setCv(null);
-    setError(false);
   };
 
   return (
-    <div className='r-container'>
-      <span className='title'>Register</span>
-      <span className='subtitle'>Registro</span>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          placeholder='Ingrese su nombre'
-          value={nombre}
-          onChange={handleNameChange}
-        />
-        <input
-          type='email'
-          placeholder='Ingrese e-mail'
-          value={email}
-          onChange={handleEmailChange}
-        />
-        <input
-          type='password'
-          placeholder='Ingrese contraseña'
-          value={password}
-          onChange={handlePasswordChange}
-        />
-        <input
-          type='file'
-          id='file'
-          style={{ display: 'none' }}
-          onChange={handleCvChange}
-        />
-        <label htmlFor='file'>
-          <img src={addCV} alt='Cv' />
-          <span>Ingresa Curriculum Vitae</span>
-        </label>
-        <button type='submit'>Register</button>
-      </form>
-      {error && <p style={{ color: 'red' }}>Por favor, completa todos los campos.</p>}
-      <p>¿Tienes una cuenta? 
-        <button onClick={() => setShowLogin(true)}>Inicia sesión</button>
-      </p>
-    </div>
-  );
-}
+    <>
+    <form onSubmit={handleRegister} className="register-form">
+      <h2>Registro</h2>
+      <input
+        type="email"
+        placeholder="Email"
+        value={gmail}
+        onChange={(e) => setGmail(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Usuario"
+        value={usuario}
+        onChange={(e) => setUsuario(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Registrar</button>
+    </form>
+  </>);
+};
 
 export default Register;

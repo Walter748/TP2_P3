@@ -1,6 +1,7 @@
 import '../styles/perfiles.css'
+import {Link} from 'react-router-dom'
 
-export function Perfiles() {
+function Perfiles() {
     return (
         <main>
             <article>
@@ -8,6 +9,7 @@ export function Perfiles() {
                 <p>Desarrollador Frontend</p>
                 <n />
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis doloremque repellendus laudantium numquam aspernatur quasi minus, praesentium voluptatem ratione consectetur et omnis maiores ea odit, culpa ipsam minima aliquam sequi!</p>
+                <Link to='/portafolio' className='boton'>Mas info</Link>
             </article>
             <article>
                 <h2>Walter</h2>
@@ -49,6 +51,8 @@ export function Perfiles() {
         
     )
 }
+
+export default Perfiles;
 {/* <article>
             <h2>{title}</h2>
             <p>{description}</p>

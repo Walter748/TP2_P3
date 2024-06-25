@@ -1,22 +1,59 @@
-import React from 'react';
-import '../styles/login.css';
+import React, { useState } from 'react';
+import './login.css'
+import { Link, useNavigate } from 'react-router-dom';
 
-function Login({ setShowLogin }) {
+const Login = () => {
+
+  const [gmail, setGmail] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate(); // Importa el hook useNavigate
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/login', {
+        method: 'post',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ gmail, password }),
+      });
+
+      if (response.ok) {
+        navigate('/');
+      }
+
+    } catch (error) {
+      alert('Error iniciando sesión: ' + error.message);
+    }
+  };
+
   return (
-    <div className='r-container'>
-      <span className='title'>Login</span>
-      <span className='subtitle'>Acceso</span>
-      <form>
-        <input type='text' placeholder='Ingrese su Nombre'/>
-        <input type='email' placeholder='Ingrese e-mail'/>
-        <input type='password' placeholder='Crear Contraseña'/>
-        <button>Acceder</button>
-      </form>
-      <p>Todavía no tienes una cuenta? 
-        <button onClick={() => setShowLogin(false)}>Registrate</button>
-      </p>
+    <div className="flex flex-col min-h-[100dvh]">
+      
+      <div className="login-container">
+        <form className="login-form" onSubmit={handleLogin}>
+          <h2>Inicio de Sesión</h2>
+          <input
+            className="login-input"
+            type="email"
+            placeholder="Email"
+            value={gmail}
+            onChange={(e) => setGmail(e.target.value)}
+          />
+          <input
+            className="login-input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="login-button" type="submit">Iniciar Sesión</button> 
+          <p className="register-text">¿Todavía no tienes sesión? Presiona <Link to='/register'>aquí</Link> para registrarte.</p>
+        </form>
+      </div>
     </div>
   );
-}
+};
 
 export default Login;

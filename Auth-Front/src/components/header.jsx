@@ -1,13 +1,6 @@
 import '../styles/header.css'
 
-
-export function header () {
-    const handleLogout = () => {
-        setUser([]); // Limpiar el estado del usuario al hacer logout
-      };
-    
-
-
+function header() {
     return (
         <header>
             <h1>Portafolio</h1>

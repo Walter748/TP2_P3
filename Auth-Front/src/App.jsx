@@ -1,27 +1,20 @@
-// App.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Register from './components/Register.jsx';
-import Login from './components/Login.jsx';
-import header from './components/header.jsx'; 
-import NavBar from './components/NavBar'; 
+import Register from './components/Register';
+import Login from './components/Login';
+import Home from './pages/home'
+import VerPor from './pages/VerPor'
 
 function App() {
-  const [user, setUser] = useState([]);
-  const [showLogin, setShowLogin] = useState(true);
-
   return (
-    <div className='app-container'>
-      {user.length === 0 ? (
-        showLogin ? (
-          <Login setShowLogin={setShowLogin} />
-        ) : (
-          <Register setUser={setUser} setShowLogin={setShowLogin} />
-        )
-      ) : (
-        <header user={user} setUser={setUser} />
-      )}
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} /> 
+        <Route path="/" element={<Home />} />
+        <Route path='/portafolio' element={<VerPor/>} />
+      </Routes>
+    </Router>
   );
 }
 
